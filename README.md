@@ -4,10 +4,20 @@
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.utils.configuration/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.utils.configuration/actions/workflows/codeql.yml)
 
 # ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Utils.Configuration
-### A utility library for configuration related operations
+A utility library for configuration related operations.
 
 ## Installation
 
-```
+```bash
 dotnet add package Soenneker.Utils.Configuration
 ```
+
+## Quick start
+
+```csharp
+using Soenneker.Utils.Configuration.Registrars;
+
+services.AddConfigurationUtilAsSingleton();
+```
+
+Then inject `IConfigurationUtil` wherever you need it.
