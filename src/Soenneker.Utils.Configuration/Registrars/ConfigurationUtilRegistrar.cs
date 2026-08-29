@@ -12,6 +12,7 @@ public static class ConfigurationUtilRegistrar
     /// <summary>
     /// Adds <see cref="IConfigurationUtil"/> as a singleton service. <para/>
     /// </summary>
+    /// <returns>Adds <see cref="IConfigurationUtil"/> as a singleton service. <para/>.</returns>
     public static IServiceCollection AddConfigurationUtilAsSingleton(this IServiceCollection services)
     {
         services.TryAddSingleton<IConfigurationUtil, ConfigurationUtil>();
@@ -22,6 +23,7 @@ public static class ConfigurationUtilRegistrar
     /// <summary>
     /// Adds <see cref="IConfigurationUtil"/> as a scoped service. <para/>
     /// </summary>
+    /// <returns>Adds <see cref="IConfigurationUtil"/> as a scoped service. <para/>.</returns>
     public static IServiceCollection AddConfigurationUtilAsScoped(this IServiceCollection services)
     {
         services.TryAddScoped<IConfigurationUtil, ConfigurationUtil>();
