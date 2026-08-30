@@ -3,8 +3,9 @@
 [![](https://img.shields.io/nuget/dt/soenneker.utils.configuration.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.utils.configuration/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.utils.configuration/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.utils.configuration/actions/workflows/codeql.yml)
 
-# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Utils.Configuration
-A utility library for configuration related operations.
+# Soenneker.Utils.Configuration
+
+DI registration for the `IConfigurationUtil` marker service.
 
 ## Installation
 
@@ -12,7 +13,7 @@ A utility library for configuration related operations.
 dotnet add package Soenneker.Utils.Configuration
 ```
 
-## Quick start
+## Registration
 
 ```csharp
 using Soenneker.Utils.Configuration.Registrars;
@@ -20,4 +21,10 @@ using Soenneker.Utils.Configuration.Registrars;
 services.AddConfigurationUtilAsSingleton();
 ```
 
-Then inject `IConfigurationUtil` wherever you need it.
+Scoped registration is also available:
+
+```csharp
+services.AddConfigurationUtilAsScoped();
+```
+
+`IConfigurationUtil` does not expose configuration operations or wrap `IConfiguration`; resolving it only provides a marker service. Applications that need to read configuration should continue to inject `IConfiguration` or typed options directly.
